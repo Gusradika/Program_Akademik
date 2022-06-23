@@ -1,0 +1,73 @@
+ * ########################## DEV LOG ############################
+ * Stable a0.1
+ * -[v] Mengganti inputan user dari scanner menjadi Buffered Reader
+ * -[v] menambahkan Random text untuk tampilan awal login
+ * -[v] System Exit
+ * NOTE : Tambahkan USERNAME & PASSWORD salah jika LOGIN STATUS FAIL.
+  
+ * Stable a0.2
+  - memindahkan method [ERROMSG1] ke class [inputCheck] 
+  - membuat USER&PASS salah. di cek melalui counter jika counter >= 
+  1 maka cetak error msg. hapus cache : method.backToLandingPage()
+  - 
+  NOTE: cari struktur data yang pas untuk menyelesaikan LOGIN DATA
+
+
+
+    TODO :
+    - BUAT ROLE dan DATA LOGIN
+    - BUAT TAMPILAN UTK SETIAP ROLE
+
+  ############### IDE ##########################
+  1. nantinya ada beberapa role yaitu [BRANCH BARU dgn KODE_FITUR]
+  
+  [ADMIN] = yang mengadministrasi STATUS_MHS(aktif/tidak aktif), SSKM, Edit data || Update News
+
+            //SEMUANYA DI SETOR KE ARRAY yang sama seperti MSG PENGAJAR
+            //ACCESS TO EVERYONEEEEEEEEEEEEEEEEEEE!!! :DDDD
+            //(UTK MHS TAMPILKAN MELALUI VALIDATOR agar URUT dan dibuka berdasarkan ID_PESAN)
+
+            TAMPILAN UNTUK DOSEN :
+            <KMHS_INSTANSI>, <PENGUNGUMAN>
+            <HEADER_PESAN>,
+            <PESAN STRING 1>
+            <PESAN STRING 2>
+            <PESAN STRING 3>
+            <PESAN STRING 4>
+            <PESAN STRING ...>
+                                    <AUTO GENERATED : KMHS>
+
+        ### (setelahnya lakukan konfirmasi PENGIRIMAN dengan cara ketik 0 saja DAN BACK KE MENU) ###
+
+  [PENGAJAR & DOSWAL] = yang membuat TEST(Tugas) dan mengecek wali murid nya. 
+  (seperti sistem DATABASE(Murid memiliki Doswal && Doswal memiliki Matkul))
+  Kolom perwalian : <NOMOR_BARIS>, <ID_MHS_BIMBINGAN>, <NM_MHS>, <KODETEST>, <NILAI>, <REMIDIAL>
+  inputkan > NOMOR baris 
+            jika baris dipilih maka akan muncul menu seperti MESSAGE NM_MHS
+
+
+            //SEMUANYA DI SETOR KE ARRAY 
+            //(WHO HAVE ACCESS?)
+            //(UTK MHS TAMPILKAN MELALUI VALIDATOR agar URUT dan dibuka berdasarkan ID_PESAN)
+
+            TAMPILAN UNTUK DOSEN :
+            <NAMA_DOSEN>, <(DOSWAL)>, <to, NAMA_MHS>
+            <HEADER_PESAN>,
+            <PESAN STRING 1>
+            <PESAN STRING 2>
+            <PESAN STRING 3>
+            <PESAN STRING 4>
+            <PESAN STRING ...>
+                                    <AUTO GENERATED : NAMA_DOSEN>
+
+        ### (setelahnya lakukan konfirmasi PENGIRIMAN dengan cara ketik 0 saja DAN BACK KE MENU) ###
+
+  [Pelajar] = yang mengerjakan test. tetapi tugas dapat diakses jika 
+  statusnya OPEN Controller dari Pengajar. dan Pelajar dapat mengecek Tabel Akadamik nya. 
+  Kolom : <KODETEST>, <NILAI>, <STATUS_REMIDI>, <GRADE>
+
+
+
+  GUNAKAN VALIDATOR PADA KODE TEST AGAR DAPAT DI PRINT SESUAI URUTAN. if NO dont include. if yes INCLUDE dan PRINT
+
+  2. 

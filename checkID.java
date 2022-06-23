@@ -18,7 +18,7 @@ public class checkID {
             System.out.print("Masukan Inputan  > ");
             main.input = sc.nextInt();
             if (main.input == 0 || main.input >= 4) {
-                cetak.errormsg1("INPUTAN SALAH!");
+                inputCheck.errormsg1("INPUTAN SALAH!");
             }
             switch (main.input) {
                 case 1:
@@ -45,46 +45,53 @@ public class checkID {
     public static void logininfo1() throws IOException {
         do {
             cetak.cetakBannerLogin("[LOGIN AS STAFF]" + cetak.ANSI_RESET + " || " + cetak.randomLoginText());
-            System.out.println("[0 = Back]"); // String. di cek melalui Math.Random
+            System.out.print("[0 = Back]\t");
+            // CETAK USER&PASS ERROR
+            if (dataLogin.counter >= 1) {
+                inputCheck.errormsg2("# USERNAME ATAU PASSWORD SALAH #");
+            }
             cetak.cetakSpasi(1);
-            System.out.print("Username : ");
+
+            System.out.print("\nUsername : ");
             username1 = br.readLine();
+            // IF 0 BALIK KE LANDING PAGE
             if (username1.equalsIgnoreCase("0")) {
                 inputCheck.backToLandingPage();
             }
 
             System.out.print("Password : ");
             passwords1 = br.readLine();
+            // IF 0 BALIK KE LANDING PAGE
             if (passwords1.equalsIgnoreCase("0")) {
                 inputCheck.backToLandingPage();
             }
+            dataLogin.counter++;
         } while (!dataLogin.teacherAccess);
     }
 
     public static void logininfo2() throws IOException {
         do {
             cetak.cetakBannerLogin("[LOGIN AS STUDENT]" + cetak.ANSI_RESET + " || " + cetak.randomLoginText());
-            System.out.println("[0 = Back]"); // String. di cek melalui Math.Random
+            System.out.print("[0 = Back]\t");
+            if (dataLogin.counter >= 1) {
+                inputCheck.errormsg2("# USERNAME ATAU PASSWORD SALAH #");
+            }
             cetak.cetakSpasi(1);
-            System.out.print("Username : ");
+
+            System.out.print("\nUsername : ");
             username2 = br.readLine();
+            // IF 0 BALIK KE LANDING PAGE
             if (username2.equalsIgnoreCase("0")) {
                 inputCheck.backToLandingPage();
             }
 
             System.out.print("Password : ");
             passwords2 = br.readLine();
+            // IF 0 BALIK KE LANDING PAGE
             if (passwords2.equalsIgnoreCase("0")) {
                 inputCheck.backToLandingPage();
             }
+            dataLogin.counter++;
         } while (!dataLogin.studentAccess);
     }
 }
-/*
- * ########################## DEV LOG ############################
- * Stable a0.1
- * -[v] Mengganti inputan user dari scanner menjadi Buffered Reader
- * -[v] menambahkan Random text untuk tampilan awal login
- * -[v] System Exit
- * NOTE : Tambahkan USERNAME & PASSWORD salah jika LOGIN STATUS FAIL.
- */

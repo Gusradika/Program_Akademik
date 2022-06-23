@@ -26,6 +26,7 @@ public class cetak {
 		System.out.println();
 	}
 
+	// METHOD CETAK BANNER KHUSUS LOGIN (BERWARNA)
 	public static void cetakBannerLogin(String kata) {
 		cetakSpasi(1);
 		int panjangGaris = kata.length();
@@ -41,21 +42,17 @@ public class cetak {
 		System.out.println();
 	}
 
-	public static void errormsg1(String kata_error) {
-		cetakSpasi(1);
-		System.out.println("### " + ANSI_RED_BG + kata_error + ANSI_RESET + " ###");
-		cetakSpasi(1);
-	}
-
+	// RANDOM TEXT GENERATOR JIKA INGIN MENAMBAHKAN PASTIKAN ARRAY DAN #rangeRand#
+	// MEMILIKI JUMLAH SAMA
 	public static String randomLoginText() {
 		int int_random = rand.nextInt(rangeRand);
 
 		// CONTROL RANDOM LOGIN TEXT
-		String[] randomText = { "Have a nice Coffee!", "Welcome Back!", "Hope you got a nice Day!",
-				"Dont forget to do your assignment!", "Learn to Fly", "Everything has a starting point",
-				"Dont give up just yet!", "Goodluck on your Day!", "Pratices Makes Perfect",
+		String[] randomText = { "Have a nice Coffee", "Ba-Dum-Tss", "Wish you a sweet goodluck",
+				"Dont forget to do your assignment", "Learn to Fly", "Everything has a starting point",
+				"Never give up, Never surrender", "Wish you all the best", "Pratices Makes Perfect",
 				"Theres always time to study",
-				"Knowledge is imagginable treasure" };
+				"Knowledge is imaginable treasure" };
 		return randomText[int_random];
 	}
 
