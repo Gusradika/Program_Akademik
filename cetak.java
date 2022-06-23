@@ -2,6 +2,8 @@ import java.util.*;
 
 public class cetak {
 	public static Scanner sc = new Scanner(System.in);
+	public static Random rand = new Random();
+	public static int rangeRand = 11;
 
 	// METHOD CETAK SPASI PARAMETER INT
 	public static void cetakSpasi(int cetakSpasi) {
@@ -32,7 +34,7 @@ public class cetak {
 			System.out.print("#");
 		}
 		System.out.println();
-		System.out.println(ANSI_GREEN + "* " + kata + " *" + ANSI_RESET);
+		System.out.println("##  " + ANSI_GREEN + kata + "  ##" + ANSI_RESET);
 		for (int i = 0; i < (panjangGaris + 4); i++) {
 			System.out.print("#");
 		}
@@ -45,6 +47,19 @@ public class cetak {
 		cetakSpasi(1);
 	}
 
+	public static String randomLoginText() {
+		int int_random = rand.nextInt(rangeRand);
+
+		// CONTROL RANDOM LOGIN TEXT
+		String[] randomText = { "Have a nice Coffee!", "Welcome Back!", "Hope you got a nice Day!",
+				"Dont forget to do your assignment!", "Learn to Fly", "Everything has a starting point",
+				"Dont give up just yet!", "Goodluck on your Day!", "Pratices Makes Perfect",
+				"Theres always time to study",
+				"Knowledge is imagginable treasure" };
+		return randomText[int_random];
+	}
+
+	// ###################### ANSI CONTROL #######################
 	// Declaring ANSI_RESET so that we can reset the color
 	public static final String ANSI_RESET = "\u001B[0m";
 
