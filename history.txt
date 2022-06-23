@@ -6,11 +6,15 @@
  * NOTE : Tambahkan USERNAME & PASSWORD salah jika LOGIN STATUS FAIL.
   
  * Stable a0.2
-  - memindahkan method [ERROMSG1] ke class [inputCheck] 
-  - membuat USER&PASS salah. di cek melalui counter jika counter >= 
+  -[v] memindahkan method [ERROMSG1] ke class [inputCheck] 
+  -[v] membuat USER&PASS salah. di cek melalui counter jika counter >= 
   1 maka cetak error msg. hapus cache : method.backToLandingPage()
-  - 
   NOTE: cari struktur data yang pas untuk menyelesaikan LOGIN DATA
+
+  stable a0.2.1
+  -merubah history.txt, dan main.javain
+
+  
 
 
 
@@ -70,4 +74,25 @@
 
   GUNAKAN VALIDATOR PADA KODE TEST AGAR DAPAT DI PRINT SESUAI URUTAN. if NO dont include. if yes INCLUDE dan PRINT
 
-  2. 
+  2. nantinya akan ada Posisi Dosen untuk beberapa Matkul (4 saja). (TUGAS defined by QUIZ.) (QUIZ MAKSIMAL 4)
+  nah POSISI_DOSEN nantinya akan menjadi kunci utama untuk pembuatan TUGAS. nantinya TUGAS dan JAWABAN Tugas
+  akan disetor melalui <STRING> untuk memungkinkan dan meminimalisir INPUTAN YG SALAH agar tidak ERROR 
+
+  khusus soal matematika TAMBAHKAN GENERATE RANDOM QUIZ dgn jumlah sesuai INPUTAN dan RANGE random melalui INPUTAN
+  PENGURANGAN, 
+  PEMBAGIAN, 
+  PERKALIAN, 
+  PENJUMLAHAN. 
+  khusus SOAL matematika jawaban akan di KALKULASI secara otomatis. maka fungsi GENERATE RANDOM QUIZ MTK akan
+  memiliki jawaban yang sesuai, meskipun SOAL RANDOM (cek TUGAS p.teguh kmrn)
+
+  (kalau waktunya cukup buat KONTROL untuk 4 Operator ini)
+
+
+ *3. BUAT FITUR2 YANG DI IDE KAN TAMPIL DI MENU. DAN TAMBAHKAN CATATAN COMING SOON agar memudahkan development
+ contoh : 
+ [1] KERJAKAN TEST
+ [2] CEK ADMINISTRASI KEUANGAN - [COOMING SOON]
+ ...
+
+  4. BUAT AGAR PROGRAM DAPAT DI RUN MELALUI BATCH FILE
