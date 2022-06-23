@@ -15,4 +15,5 @@ public class main {
  * 2. buat data Login dan aplikasikan ke checkID jika benar maka berhasil login.
  * gunakan array.
  * 3. buat error code jika Nama dan Password salah.
+ * 4. Ganti Scanner menjadi Buffer Reader
  */
