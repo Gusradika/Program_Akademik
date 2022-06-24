@@ -4,12 +4,15 @@ import java.io.*;
 public class checkID {
     public static Scanner sc = new Scanner(System.in);
     public static String username1, passwords1, username2, passwords2;
-    public static Integer temp;
+    public static Integer temp, counter = 0;
     public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public static String temp1 = "", temp2 = "";
+    public static boolean a, b;
 
     // Menu awal untuk Check ID
     public static void landingPage() throws IOException {
         do {
+            counter = 0; // Jika selesai maka counter langsung jadikan 0 saja
             cetak.cetakSpasi(1);
             cetak.cetakBanner("   PROGRAM AKADEMIK SMA X   ");
             System.out.println("[1] - Login Sebagai Staff");
@@ -43,17 +46,19 @@ public class checkID {
 
     // LOGIN INFO 1 - Pembina
     public static void logininfo1() throws IOException {
+
         do {
             cetak.cetakBannerLogin("[LOGIN AS STAFF]" + cetak.ANSI_RESET + " || " + cetak.randomLoginText());
             System.out.print("[0 = Back]\t");
             // CETAK USER&PASS ERROR
-            if (dataLogin.counter >= 1) {
+            if (counter >= 1) {
                 inputCheck.errormsg2("# USERNAME ATAU PASSWORD SALAH #");
             }
             cetak.cetakSpasi(1);
 
             System.out.print("\nUsername : ");
             username1 = br.readLine();
+            // temp1 = username1;
             // IF 0 BALIK KE LANDING PAGE
             if (username1.equalsIgnoreCase("0")) {
                 inputCheck.backToLandingPage();
@@ -61,19 +66,25 @@ public class checkID {
 
             System.out.print("Password : ");
             passwords1 = br.readLine();
+            // temp2 = passwords1;
             // IF 0 BALIK KE LANDING PAGE
             if (passwords1.equalsIgnoreCase("0")) {
                 inputCheck.backToLandingPage();
             }
-            dataLogin.counter++;
-        } while (!dataLogin.teacherAccess);
+            counter++;
+            dataLogin.staffAccess = inputCheck.loginCheck1();
+        } while (!dataLogin.staffAccess);
+        dataLogin.staffAccess = false;
+        System.out.println("############## LOGIN BERHASIL STAFF");
+        landingPage();
     }
 
     public static void logininfo2() throws IOException {
         do {
             cetak.cetakBannerLogin("[LOGIN AS STUDENT]" + cetak.ANSI_RESET + " || " + cetak.randomLoginText());
             System.out.print("[0 = Back]\t");
-            if (dataLogin.counter >= 1) {
+            // CETAK USER&PASS ERROR
+            if (counter >= 1) {
                 inputCheck.errormsg2("# USERNAME ATAU PASSWORD SALAH #");
             }
             cetak.cetakSpasi(1);
@@ -91,7 +102,11 @@ public class checkID {
             if (passwords2.equalsIgnoreCase("0")) {
                 inputCheck.backToLandingPage();
             }
-            dataLogin.counter++;
+            counter++;
+            dataLogin.studentAccess = inputCheck.loginCheck2();
         } while (!dataLogin.studentAccess);
+        dataLogin.studentAccess = false;
+        System.out.println("############## LOGIN BERHASIL student");
+        landingPage();
     }
 }
