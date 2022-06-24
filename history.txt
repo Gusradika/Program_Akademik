@@ -28,6 +28,8 @@
     TODO :
     - BUAT ROLE dan DATA LOGIN
     - BUAT TAMPILAN UTK SETIAP ROLE
+    - BUAT CACHE STATE UNTUK CHECKPOINT SEMISAL ERROR DI TENGAH (JIKA BISA MAKA SANGAT AVAILABLE UNTUK PUNYA 2 Cache
+    DAN INPUT DATA DARI [USER: ADMIN])
 
   ############### IDE ##########################
   1. nantinya ada beberapa role yaitu [BRANCH BARU dgn KODE_FITUR]
