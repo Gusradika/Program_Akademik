@@ -1,6 +1,7 @@
 import java.io.IOException;
 
 public class inputCheck {
+    public static int loginAlias = 0;
 
     public static void backToLandingPage() throws IOException {
         checkID.username1 = "";
@@ -32,12 +33,12 @@ public class inputCheck {
             String b = dataLogin.passStaff.elementAt(i);
             if (checkID.username1.equals(a) && checkID.passwords1.equals(b)) {
                 cetak.cetakSpasi(1);
-                System.out.println("Sucess...");
+                System.out.println(cetak.ANSI_GREEN_BG + "Sucess..." + cetak.ANSI_RESET);
                 return true;
             }
         }
         cetak.cetakSpasi(1);
-        System.out.println("Fail...");
+        System.out.println(cetak.ANSI_RED_BG + "Fail..." + cetak.ANSI_RESET);
         dataLogin.staffAccess = false;
         return false;
 
@@ -53,12 +54,13 @@ public class inputCheck {
             String b = dataLogin.passStudent.elementAt(i);
             if (checkID.username2.equals(a) && checkID.passwords2.equals(b)) {
                 cetak.cetakSpasi(1);
-                System.out.println("Sucess...");
+                System.out.println(cetak.ANSI_GREEN_BG + "Sucess..." + cetak.ANSI_RESET);
+                loginAlias = i;
                 return true;
             }
         }
         cetak.cetakSpasi(1);
-        System.out.println("Fail...");
+        System.out.println(cetak.ANSI_RED_BG + "Fail..." + cetak.ANSI_RESET);
         return false;
 
     }

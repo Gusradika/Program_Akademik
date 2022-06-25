@@ -7,14 +7,14 @@ public class checkID {
     public static Integer temp, counter = 0;
     public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     public static String temp1 = "", temp2 = "";
-    public static boolean a, b;
+    public static boolean debugMode = false;
 
     // Menu awal untuk Check ID
     public static void landingPage() throws IOException {
         do {
             counter = 0; // Jika selesai maka counter langsung jadikan 0 saja
             cetak.cetakSpasi(1);
-            cetak.cetakBanner("   PROGRAM AKADEMIK SMA X   ");
+            cetak.cetakBanner("   PROGRAM AKADEMIK KULIAH X   ");
             System.out.println("[1] - Login Sebagai Staff");
             System.out.println("[2] - Login Sebagai Student");
             System.out.println("[3] - Exit");
@@ -34,11 +34,20 @@ public class checkID {
 
                 case 3:
                     cetak.cetakSpasi(1);
-                    System.out.println(cetak.ANSI_RED_BG + "System Exiting..." + cetak.ANSI_RESET); // Ganti Warna
-                                                                                                    // menjadi bg Red
-                                                                                                    // tunggu sampai
-                                                                                                    // WIFI NYALA
+                    System.out.println(cetak.ANSI_RED_BG + "System Exiting... " + cetak.ANSI_RESET);
                     System.exit(0);
+                    break;
+                case 210039:
+                    if (!debugMode) {
+                        System.out.println(cetak.ANSI_CYAN_BG + "Debug Mode Activated [ON]" + cetak.ANSI_RESET);
+                        debugMode = true;
+                        landingPage();
+                    }
+                    if (debugMode) {
+                        System.out.println(cetak.ANSI_CYAN_BG + "Debug Mode Activated [OFF]" + cetak.ANSI_RESET);
+                        debugMode = false;
+                        landingPage();
+                    }
                     break;
             }
         } while (main.input == 0 || main.input >= 4);
@@ -48,6 +57,10 @@ public class checkID {
     public static void logininfo1() throws IOException {
 
         do {
+            // DEBUG MODE
+            if (debugMode) {
+                dataLogin.dataLogin_Debug();
+            }
             cetak.cetakBannerLogin("[LOGIN AS STAFF]" + cetak.ANSI_RESET + " || " + cetak.randomLoginText());
             System.out.print("[0 = Back]\t");
             // CETAK USER&PASS ERROR
@@ -81,6 +94,9 @@ public class checkID {
 
     public static void logininfo2() throws IOException {
         do {
+            if (debugMode) {
+                dataLogin.dataLogin_Debug();
+            }
             cetak.cetakBannerLogin("[LOGIN AS STUDENT]" + cetak.ANSI_RESET + " || " + cetak.randomLoginText());
             System.out.print("[0 = Back]\t");
             // CETAK USER&PASS ERROR

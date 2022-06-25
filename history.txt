@@ -1,4 +1,4 @@
- * ########################## DEV LOG ############################
+ * ########################## DEV LOG / JOURNAL ############################
  * Stable a0.1
  * -[v] Mengganti inputan user dari scanner menjadi Buffered Reader
  * -[v] menambahkan Random text untuk tampilan awal login
@@ -12,21 +12,24 @@
   NOTE: cari struktur data yang pas untuk menyelesaikan LOGIN DATA
 
   stable a0.2.1
-  -merubah history.txt, dan main.javain
+  -merubah history.txt, dan main.java
 
   Stable a0.3
   - [v] Membuat GetData sebagai cache awal
   - [v] membuat Cache Username dan Password untuk LOGIN. [STUDENT],[STAFF]
   - [v] membuat Cek Access Username dan Password untuk LOGIN. [STUDENT],[STAFF]
-  
+
+  Stable a0.3.1
+  - [v] Merubah Cache menjadi otomatis defined by String[] lalu di inputkan ke vector melalui loop di definisikan ke index.
+  - [v] Membuat debug mode [dinamis] yang di kontrol melalui LandingPage : INPUTAN = 210039. untuk versi ini Debug mode hanya 
+    berlaku untuk mengeprint USER & PASS ketika memilih input untuk login
   NOTE : BUAT BG DAN STATUS CETAK [NO_ACCESS], [AVAILABLE] & ROLE SETIAP STAFF serta POSISI UNTUK PENGAJAR
   
     ON-GOING
-    
+      - BUAT ROLE dan DATA LOGIN menggunakan Login_Alias
 
 
     TODO :
-    - BUAT ROLE dan DATA LOGIN
     - BUAT TAMPILAN UTK SETIAP ROLE
     - BUAT CACHE STATE UNTUK CHECKPOINT SEMISAL ERROR DI TENGAH (JIKA BISA MAKA SANGAT AVAILABLE UNTUK PUNYA 2 Cache
     DAN INPUT DATA DARI [USER: ADMIN])

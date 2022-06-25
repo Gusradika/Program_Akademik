@@ -42,6 +42,21 @@ public class cetak {
 		System.out.println();
 	}
 
+	public static void cetakBannerDebug(String kata) {
+		cetakSpasi(1);
+		int panjangGaris = kata.length();
+		System.out.println();
+		for (int i = 0; i < (panjangGaris + 4); i++) {
+			System.out.print("#");
+		}
+		System.out.println();
+		System.out.println("##  " + ANSI_CYAN_BG + kata + ANSI_RESET + "  ##");
+		for (int i = 0; i < (panjangGaris + 4); i++) {
+			System.out.print("#");
+		}
+		System.out.println();
+	}
+
 	// RANDOM TEXT GENERATOR JIKA INGIN MENAMBAHKAN PASTIKAN ARRAY DAN #rangeRand#
 	// MEMILIKI JUMLAH SAMA
 	public static String randomLoginText() {
@@ -63,8 +78,10 @@ public class cetak {
 	public static final String ANSI_GREEN = "\u001B[32m";
 	public static final String ANSI_RED_BG = "\u001B[41m";
 	public static final String ANSI_YELLOW_BG = "\u001B[43m";
+	public static final String ANSI_CYAN_BG = "\u001B[46m";
+	public static final String ANSI_GREEN_BG = "\u001B[42m";
 	// Declaring the color
-	// Custom declaration
+	// Custom declaration\u001B[36m
 	public static final String ANSI_YELLOW = "\u001B[33m";
 
 }
