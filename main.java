@@ -1,11 +1,13 @@
 import java.io.IOException;
 import java.util.*;
 
+import javax.security.auth.login.LoginException;
+
 public class main {
     public static Scanner sc = new Scanner(System.in);
     public static int input;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, LoginException {
         dataLogin.userCache();
         // System.out.println(dataLogin.uNameStaff.size());
         // System.out.println(dataLogin.uNameStaff);

@@ -25,6 +25,11 @@
     berlaku untuk mengeprint USER & PASS ketika memilih input untuk login
   NOTE : BUAT BG DAN STATUS CETAK [NO_ACCESS], [AVAILABLE] & ROLE SETIAP STAFF serta POSISI UNTUK PENGAJAR
   
+  stable a0.4.0
+  - [v] Membuat Cetak Status No Access, AVAILABLE etc
+  - [] Membuat dataLogin.Login_Alias untuk mendefinisikan ID berapa yang login. jika ID tersebut N% maka dia memiliki role N%
+  - []  BUG LOGIN ACCOUNT 2 MALAH DPT ROLES 0 
+
     ON-GOING
       - BUAT ROLE dan DATA LOGIN menggunakan Login_Alias
 

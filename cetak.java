@@ -4,6 +4,7 @@ public class cetak {
 	public static Scanner sc = new Scanner(System.in);
 	public static Random rand = new Random();
 	public static int rangeRand = 11;
+	public static String news = "(null)";
 
 	// METHOD CETAK SPASI PARAMETER INT
 	public static void cetakSpasi(int cetakSpasi) {
@@ -69,6 +70,22 @@ public class cetak {
 				"Theres always time to study",
 				"Knowledge is imaginable treasure" };
 		return randomText[int_random];
+	}
+
+	public static void news() {
+		System.out.println(ANSI_YELLOW + news + ANSI_RESET);
+	}
+
+	public static void accessNo() {
+		System.out.print(ANSI_RED_BG + "NO ACCESS" + ANSI_RESET + "\n");
+	}
+
+	public static void accessOk() {
+		System.out.println(ANSI_GREEN_BG + "AVAILABLE" + ANSI_RESET);
+	}
+
+	public static void accessSoon() {
+		System.out.println(ANSI_YELLOW_BG + "COOMING SOON" + ANSI_RESET);
 	}
 
 	// ###################### ANSI CONTROL #######################

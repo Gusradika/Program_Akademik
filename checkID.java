@@ -1,4 +1,7 @@
 import java.util.*;
+
+import javax.security.auth.login.LoginException;
+
 import java.io.*;
 
 public class checkID {
@@ -10,7 +13,7 @@ public class checkID {
     public static boolean debugMode = false;
 
     // Menu awal untuk Check ID
-    public static void landingPage() throws IOException {
+    public static void landingPage() throws IOException, LoginException {
         do {
             counter = 0; // Jika selesai maka counter langsung jadikan 0 saja
             cetak.cetakSpasi(1);
@@ -54,7 +57,7 @@ public class checkID {
     }
 
     // LOGIN INFO 1 - Pembina
-    public static void logininfo1() throws IOException {
+    public static void logininfo1() throws IOException, LoginException {
 
         do {
             // DEBUG MODE
@@ -89,10 +92,10 @@ public class checkID {
         } while (!dataLogin.staffAccess);
         dataLogin.staffAccess = false;
         System.out.println("############## LOGIN BERHASIL STAFF");
-        landingPage();
+        dataLogin.loginRolesStaff();
     }
 
-    public static void logininfo2() throws IOException {
+    public static void logininfo2() throws IOException, LoginException {
         do {
             if (debugMode) {
                 dataLogin.dataLogin_Debug();
@@ -124,5 +127,6 @@ public class checkID {
         dataLogin.studentAccess = false;
         System.out.println("############## LOGIN BERHASIL student");
         landingPage();
+
     }
 }

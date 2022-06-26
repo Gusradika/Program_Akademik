@@ -1,9 +1,10 @@
 import java.io.IOException;
 
-public class inputCheck {
-    public static int loginAlias = 0;
+import javax.security.auth.login.LoginException;
 
-    public static void backToLandingPage() throws IOException {
+public class inputCheck {
+
+    public static void backToLandingPage() throws IOException, LoginException {
         checkID.username1 = "";
         checkID.username2 = "";
         checkID.passwords1 = "";
@@ -34,6 +35,7 @@ public class inputCheck {
             if (checkID.username1.equals(a) && checkID.passwords1.equals(b)) {
                 cetak.cetakSpasi(1);
                 System.out.println(cetak.ANSI_GREEN_BG + "Sucess..." + cetak.ANSI_RESET);
+                dataLogin.loginAlias = i;
                 return true;
             }
         }
@@ -55,7 +57,7 @@ public class inputCheck {
             if (checkID.username2.equals(a) && checkID.passwords2.equals(b)) {
                 cetak.cetakSpasi(1);
                 System.out.println(cetak.ANSI_GREEN_BG + "Sucess..." + cetak.ANSI_RESET);
-                loginAlias = i;
+                dataLogin.loginAlias = i;
                 return true;
             }
         }
