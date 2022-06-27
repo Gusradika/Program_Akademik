@@ -17,14 +17,17 @@ public class loginUI {
                 System.out.println("Roles Name : " + dataLogin.rolesName);
                 cetak.cetakSpasi(1);
             }
-            cetak.cetakBanner("GATE UNIVERSITAS X LITE" + dataLogin.uNameStaff.elementAt(dataLogin.loginAlias));
-            cetak.cetakSpasi(1);
-            System.out.println("");
-            System.out.println("");
-            System.out.println("5 - Clear Data Login");
-            main.input = main.sc.nextInt();
-            switch (main.input) {
+            cetak.cetakBanner("       GATE UNIVERSITAS X LITE || LOGGED IN AS STAFF       ");
+            cetak.news();
+            System.out.println("***************************************************************");
+            System.out.print(cetak.ANSI_CYAN + "Welcome Back! : " + cetak.ANSI_RESET
+                    + dataLogin.realName + " " + cetak.ANSI_CYAN
+                    + cetak.ANSI_YELLOW + "(STAFF "
+                    + dataLogin.rolesName + ")" + cetak.ANSI_RESET);
+            cetak.cetakSpasi(2);
+            dataLogin.rolesBasedMenu();
 
+            switch (main.input) {
                 case 5:
                     System.out.println("CLEARING");
                     dataLogin.clearLoginCache();

@@ -64,7 +64,6 @@ public class inputCheck {
         cetak.cetakSpasi(1);
         System.out.println(cetak.ANSI_RED_BG + "Fail..." + cetak.ANSI_RESET);
         return false;
-
     }
 
 }

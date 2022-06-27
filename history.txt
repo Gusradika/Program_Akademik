@@ -27,11 +27,26 @@
   
   stable a0.4.0
   - [v] Membuat Cetak Status No Access, AVAILABLE etc
-  - [] Membuat dataLogin.Login_Alias untuk mendefinisikan ID berapa yang login. jika ID tersebut N% maka dia memiliki role N%
-  - []  BUG LOGIN ACCOUNT 2 MALAH DPT ROLES 0 
+  - [v] Membuat dataLogin.Login_Alias untuk mendefinisikan ID berapa yang login. jika ID tersebut N% maka dia memiliki role N%
+  - [v] BUG LOGIN ACCOUNT 2 MALAH DPT ROLES 0 
+  - [v] Membuat LOGIN UI untuk STAFF 
+  - [v] buat nama aktual setiap account
+  - [v] Menambahkan Menu untuk LoginUI // NOTE : Bikin di Class INPUTCHECK dan filter sesuai ROLES
+  - [v] Menampilkan Roles setiap akun
+  - [] Filter pilihan sesuai avabiality Roles
+  - [v] Membuat Class Baru ControlOption
+  - [v] Membuat Menu News Bisa di input terserah //
+      - [v] Membuat ADMIN dapat memperbarui NEWS
+      - [ ] Restrict DOSEN untuk memperbarui NEWS
+  - [ ] Membuat Login UI lebih interaktif // NOTE Untuk inbox bisa gunakan VECTOR. jika inputan 
+                                              0 maka Menghapus array terakhir dan menyimpan semua array itu. 
+                                              [2D] atau bisa juga menjadikannya satu dimensi dimana jika kita enter
+                                               maka dia akan menambahkan \n sampai kita ketik 0 baru dia akan stop menyetor
+                                               apa yang kita tulis. dan disetor kedalam ARRAY 1D.
 
     ON-GOING
       - BUAT ROLE dan DATA LOGIN menggunakan Login_Alias
+      - Bikin Soal A,B,C,D
 
 
     TODO :

@@ -4,7 +4,7 @@ public class cetak {
 	public static Scanner sc = new Scanner(System.in);
 	public static Random rand = new Random();
 	public static int rangeRand = 11;
-	public static String news = "(null)";
+	public static String news = "Akan ada Donor darah yang dilakukan pada tanggal 15 September!";
 
 	// METHOD CETAK SPASI PARAMETER INT
 	public static void cetakSpasi(int cetakSpasi) {
@@ -73,29 +73,39 @@ public class cetak {
 	}
 
 	public static void news() {
-		System.out.println(ANSI_YELLOW + news + ANSI_RESET);
+		System.out.println(ANSI_YELLOW + "[NEWS : " + news + "]" + ANSI_RESET);
 	}
 
-	public static void accessNo() {
-		System.out.print(ANSI_RED_BG + "NO ACCESS" + ANSI_RESET + "\n");
+	public static String accessNo() {
+		String a = "\u001B[31m" + "<N>" + "\u001B[0m";
+		return a;
 	}
 
-	public static void accessOk() {
-		System.out.println(ANSI_GREEN_BG + "AVAILABLE" + ANSI_RESET);
+	public static String accessOk() {
+		String a = "\u001B[32m" + "<Y>" + "\u001B[0m";
+		return a;
 	}
 
-	public static void accessSoon() {
-		System.out.println(ANSI_YELLOW_BG + "COOMING SOON" + ANSI_RESET);
+	public static String accessSoon() {
+		String a = "\u001B[33m" + "<?>" + "\u001B[0m";
+		return a;
+	}
+
+	public static String accessNeutral() {
+		String a = "\u001B[36m" + "<X>" + "\u001B[0m";
+		return a;
 	}
 
 	// ###################### ANSI CONTROL #######################
 	// Declaring ANSI_RESET so that we can reset the color
 	public static final String ANSI_RESET = "\u001B[0m";
 
+	public static final String ANSI_RED = "\u001B[31m";
 	public static final String ANSI_GREEN = "\u001B[32m";
 	public static final String ANSI_RED_BG = "\u001B[41m";
 	public static final String ANSI_YELLOW_BG = "\u001B[43m";
 	public static final String ANSI_CYAN_BG = "\u001B[46m";
+	public static final String ANSI_CYAN = "\u001B[36m";
 	public static final String ANSI_GREEN_BG = "\u001B[42m";
 	// Declaring the color
 	// Custom declaration\u001B[36m
