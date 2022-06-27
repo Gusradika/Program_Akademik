@@ -14,6 +14,8 @@ public class dataLogin {
     public static Vector<String> displayTrueNameStaff = new Vector<String>();
     public static Vector<String> displayTrueNameStudent = new Vector<String>();
 
+    public static Vector<Integer> displayStudentToDosen = new Vector<Integer>();
+
     public static int loginAlias = 0, rolesID = 0;
     public static String rolesName = "", realName = "";
     // ####### USER CONTROL
@@ -24,16 +26,18 @@ public class dataLogin {
             "KhanzaOwO" };
     private static String[] iPassStaff = { "1", "asede", "2000", "123", "232" };
 
-    private static String[] trueNameStaff = { "ADMINISTRATOR", // ADMIN
-            "Herlambang, S.Mat, M.Mat", // MTK
-            "Nadim Suryaprananta, S.Pd", // IPA
-            "Raka Nambung, S.Pd, M.Pd", // IPS
-            "Khanza Auliya, S.Pd, M.Pd" }; // B.ING
+    private static String[] trueNameStaff = { "ADMINISTRATOR", // ADMIN 0
+            "Herlambang, S.Mat, M.Mat", // MTK 1
+            "Nadim Suryaprananta, S.Pd", // IPA 2
+            "Raka Nambung, S.Pd, M.Pd", // IPS 3
+            "Khanza Auliya, S.Pd, M.Pd" }; // B.ING 4
 
-    private static String[] trueNameStudent = { "I Gusti Ngurah Aditya Kesuma", "Jasmin Suryatmi", "Maya Nasyiah",
-            "Bagiya Rajata", "Elvin Rajasa", "Cayadi Hutapea", "Gamani Mahendra", "Tantri Prastuti", "Asman Hutagalung",
-            "Puji Permata", "Fathonah Nasyiah",
+    private static String[] trueNameStudent = { "Aditya Kesuma", "Jasmin Suryatmi", "Maya Nasyiah",
+            "Bagiya Rajata", "Elvin Rajasa", "Cayadi Hutapea", "Gamani Mahendra", "Tantri Prastuti", "Asman puji",
+            "Puji Permata", "Indri Nasyiah",
             "Rina Purwanti", "Karsa Mustofa", "Daliman Gunawan" };
+    // DOSWAL SETIAP NAMA STUDENT
+    private static int[] studentToDosen = { 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2 };
 
     private static String[] iUserStudent = { "aditya", "Jasmin090", "Nasyiah3", "taraja", "elvin12", "Hutapadi",
             "Hendra30", "Prastuti", "Asman", "puji44", "Nasyiah",
@@ -44,6 +48,34 @@ public class dataLogin {
 
     // NOTE : Gunakan Switch(Inputan) Case. Case 1, 5 : (artinya jika inputan 1 / 5.
     // maka dia akan masuk ke case ini)
+
+    // cetak student SEKARANG SAMPAI : DOSWAL BUAT VARIABLE DULU DAN COCOKAN SESUAI
+    // CATATAN
+    // LINK KE CASE WHEN LOGIN UI BY USER
+    public static void cetakStudent() throws LoginException, IOException {
+        cetak.cetakSpasi(2);
+        System.out.println(cetak.ANSI_YELLOW_BG + "#### [2] DETAIL PELAJAR ####" + cetak.ANSI_RESET);
+        String menu[] = { "ID\t\t", "Nama\t\t\t", "Pembimbing\t\t\t", "MTK\t", "IPA\t", "IPS\t",
+                "ENG\t\t"
+                        + "\n=======================================================================================================\n\n" };
+        cetak.cetakSpasi(1);
+        System.out.println(
+                "=======================================================================================================");
+        for (int i = 0; i < menu.length; i++) {
+            System.out.print(menu[i]);
+        }
+        for (int i = 0; i < uNameStudent.size(); i++) {
+            System.out.println((i + 1) + "\t\t" + displayTrueNameStudent.elementAt(i) + "\t\t"
+                    + cetak.ANSI_CYAN
+                    + displayTrueNameStaff.elementAt(displayStudentToDosen.elementAt(i)) + cetak.ANSI_RESET);
+        }
+        cetak.cetakSpasi(2);
+        /*
+         * ================================================================
+         * SAMPAI DISINI...
+         */
+        loginUI.loginAsStaff();
+    }
 
     public static void userCache() {
         addUserStaff();
@@ -62,6 +94,7 @@ public class dataLogin {
         for (int i = 0; i < iUserStudent.length; i++) {
             uNameStudent.add(iUserStudent[i]);
             passStudent.add(iPassStudent[i]);
+            displayStudentToDosen.add(studentToDosen[i]);
             displayTrueNameStudent.add(trueNameStudent[i]); // ACTUAL NAME Student
         }
     }
@@ -70,31 +103,31 @@ public class dataLogin {
     public static void loginRolesStaff() throws LoginException, IOException {
         int a = dataLogin.loginAlias;
         switch (a) {
-            case 0, 1: // ROLES OUTPUT 0 = ADMIN
+            case 0: // ROLES OUTPUT 0 = ADMIN
                 rolesID = 1;
                 rolesName = arrayRolesName[(rolesID - 1)];
                 realName = displayTrueNameStaff.elementAt(a);
                 loginUI.loginAsStaff();
                 break;
-            case 2: // ROLES OUTPUT 1 = DOSEN MTK
+            case 1: // ROLES OUTPUT 1 = DOSEN MTK
                 rolesID = 2;
                 rolesName = arrayRolesName[(rolesID - 1)];
                 realName = displayTrueNameStaff.elementAt(a);
                 loginUI.loginAsStaff();
                 break;
-            case 3: // ROLES OUTPUT 2 = DOSEN IPA
+            case 2: // ROLES OUTPUT 2 = DOSEN IPA
                 rolesID = 3;
                 rolesName = arrayRolesName[(rolesID - 1)];
                 realName = displayTrueNameStaff.elementAt(a);
                 loginUI.loginAsStaff();
                 break;
-            case 4: // ROLES OUTPUT 1 = DOSEN IPS
+            case 3: // ROLES OUTPUT 1 = DOSEN IPS
                 rolesID = 4;
                 rolesName = arrayRolesName[(rolesID - 1)];
                 realName = displayTrueNameStaff.elementAt(a);
                 loginUI.loginAsStaff();
                 break;
-            case 5: // ROLES OUTPUT 1 = DOSEN BING
+            case 4: // ROLES OUTPUT 1 = DOSEN BING
                 rolesID = 5;
                 rolesName = arrayRolesName[(rolesID - 1)];
                 realName = displayTrueNameStaff.elementAt(a);
@@ -121,7 +154,7 @@ public class dataLogin {
                         break;
 
                     case 2:
-
+                        cetakStudent();
                         break;
 
                     case 3:
@@ -208,6 +241,7 @@ public class dataLogin {
             System.out.println("##### ID [" + i + "]");
             System.out.println("Name : " + uNameStudent.elementAt(i));
             System.out.println("Pass : " + passStudent.elementAt(i));
+            System.out.println("realName : " + displayTrueNameStudent.elementAt(i));
             System.out.println("");
         }
 
