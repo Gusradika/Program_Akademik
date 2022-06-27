@@ -13,12 +13,12 @@
   1 maka cetak error msg. hapus cache : method.backToLandingPage()
   NOTE: cari struktur data yang pas untuk menyelesaikan LOGIN DATA
 
-stable a0.2.1
+stable a0.2.1sd
 -merubah history.txt, dan main.javain
 
 Stable a0.3
 
-- [v] Membuat GetData sebagai cache awal
+- [v] Membuat GetData sebagai cache awalsdds
 - [v] membuat Cache Username dan Password untuk LOGIN. [STUDENT],[STAFF]
 - [v] membuat Cek Access Username dan Password untuk LOGIN. [STUDENT],[STAFF]
 
