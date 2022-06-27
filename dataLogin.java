@@ -12,6 +12,7 @@ public class dataLogin {
     public static Vector<String> passStudent = new Vector<String>();
 
     public static Vector<String> displayTrueNameStaff = new Vector<String>();
+    public static Vector<String> displayTrueNameStudent = new Vector<String>();
 
     public static int loginAlias = 0, rolesID = 0;
     public static String rolesName = "", realName = "";
@@ -23,14 +24,23 @@ public class dataLogin {
             "KhanzaOwO" };
     private static String[] iPassStaff = { "1", "asede", "2000", "123", "232" };
 
-    private static String[] trueNameStaff = { "ADMIN UNIVERSITAS X", // ADMIN
+    private static String[] trueNameStaff = { "ADMINISTRATOR", // ADMIN
             "Herlambang, S.Mat, M.Mat", // MTK
             "Nadim Suryaprananta, S.Pd", // IPA
             "Raka Nambung, S.Pd, M.Pd", // IPS
             "Khanza Auliya, S.Pd, M.Pd" }; // B.ING
 
-    private static String[] iUserStudent = { "aditya", "adit2", "adit3", "adit4" };
-    private static String[] iPassStudent = { "123", "123", "abc", "123" };
+    private static String[] trueNameStudent = { "I Gusti Ngurah Aditya Kesuma", "Jasmin Suryatmi", "Maya Nasyiah",
+            "Bagiya Rajata", "Elvin Rajasa", "Cayadi Hutapea", "Gamani Mahendra", "Tantri Prastuti", "Asman Hutagalung",
+            "Puji Permata", "Fathonah Nasyiah",
+            "Rina Purwanti", "Karsa Mustofa", "Daliman Gunawan" };
+
+    private static String[] iUserStudent = { "aditya", "Jasmin090", "Nasyiah3", "taraja", "elvin12", "Hutapadi",
+            "Hendra30", "Prastuti", "Asman", "puji44", "Nasyiah",
+            "Rinazelaya", "Mustofa196", "Gunawan" };
+    private static String[] iPassStudent = { "123", "abc22", "321", "taraja", "elvinsiap", "embuh85", "haryanti",
+            "okto73", "dirja60", "gjanuar", "fatohah",
+            "4485", "azalea62", "dalimwan" };
 
     // NOTE : Gunakan Switch(Inputan) Case. Case 1, 5 : (artinya jika inputan 1 / 5.
     // maka dia akan masuk ke case ini)
@@ -52,6 +62,7 @@ public class dataLogin {
         for (int i = 0; i < iUserStudent.length; i++) {
             uNameStudent.add(iUserStudent[i]);
             passStudent.add(iPassStudent[i]);
+            displayTrueNameStudent.add(trueNameStudent[i]); // ACTUAL NAME Student
         }
     }
 
@@ -95,34 +106,69 @@ public class dataLogin {
     public static void rolesBasedMenu() throws IOException, LoginException { // CONNECTED WITH CLASS LOGINUI.java dan
                                                                              // CLASS
         // controlOption
-        if (rolesID == 1) { // ADMIN
-            System.out.println("[1]" + " - Update News " + cetak.accessOk()); // Y
-            System.out.println("[2]" + " - Detail Pelajar " + cetak.accessOk()); // Y
-            System.out.println("[3]" + " - Menu Quiz " + cetak.accessNo()); // N
-            System.out.println("[4]" + " - Detail Pelajar Bimbingan " + cetak.accessOk()); // Y
-            System.out.print("[5]" + " - Log Out" + cetak.accessNeutral());
-            System.out.print("\nMasukan inputan >");
-            main.input = main.sc.nextInt();
-            if (main.input == 1) {
-                controlOption.menuNews();
-            }
-            if (main.input == 2) {
+        do {
+            if (rolesID == 1) { // ADMIN
+                System.out.println("[1]" + " - Update News " + cetak.accessOk()); // Y
+                System.out.println("[2]" + " - Detail Pelajar " + cetak.accessOk()); // Y
+                System.out.println("[3]" + " - Menu Quiz " + cetak.accessNo()); // N
+                System.out.println("[4]" + " - Detail Pelajar Bimbingan " + cetak.accessOk()); // Y
+                System.out.print("[5]" + " - Log Out" + cetak.accessNeutral());
+                System.out.print("\nMasukan inputan >");
+                main.input = main.sc.nextInt();
+                switch (main.input) {
+                    case 1:
+                        controlOption.menuNews();
+                        break;
 
+                    case 2:
+
+                        break;
+
+                    case 3:
+
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        clearLoginCache();
+                        break;
+                }
             }
-        } else if (rolesID == 2 || rolesID == 3 || rolesID == 4 || rolesID == 5) { // NOT ADMIN
-            System.out.println("[1]" + " - Update News " + cetak.accessNo()); // N
-            System.out.println("[2]" + " - UpdateDetail Pelajar " + cetak.ANSI_GREEN + rolesName
-                    + cetak.ANSI_RESET + " " + cetak.accessOk());
-            System.out.println("[3]" + " - Create a Test " + cetak.accessOk()); // Y (based on roles)
-            System.out.println("[4]" + " - Detail Pelajar Bimbingan " + cetak.accessOk()); // Y (based on who they
-                                                                                           // teach)
-            System.out.println("[5]" + " - Log Out " + cetak.accessNeutral()); // NOT : kesimpulan bikin kondisi baru
-                                                                               // untuk mengecek dia bisa
-            // mengakses apa?
-            System.out.print("\nMasukan inputan >");
-            main.input = main.sc.nextInt();
-        } else {
-        }
+            if (rolesID == 2 || rolesID == 3 || rolesID == 4 || rolesID == 5) { // NOT ADMIN
+                System.out.println("[1]" + " - Update News " + cetak.accessNo()); // N
+                System.out.println("[2]" + " - UpdateDetail Pelajar " + cetak.ANSI_GREEN + rolesName
+                        + cetak.ANSI_RESET + " " + cetak.accessOk());
+                System.out.println("[3]" + " - Create a Test " + cetak.accessOk()); // Y (based on roles)
+                System.out.println("[4]" + " - Detail Pelajar Bimbingan " + cetak.accessNo()); // N
+                System.out.println("[5]" + " - Log Out " + cetak.accessNeutral()); // NOT : kesimpulan bikin kondisi
+                                                                                   // baru
+                                                                                   // untuk mengecek dia bisa
+                // mengakses apa?
+                System.out.print("\nMasukan inputan >");
+                main.input = main.sc.nextInt();
+                switch (main.input) {
+                    case 1:
+                        cetak.cetakSpasi(2);
+                        System.out.println(cetak.ANSI_RED_BG + "NO ACCESS!" + cetak.ANSI_RESET);
+                        loginUI.loginAsStaff();
+                        break;
+
+                    case 2:
+
+                        break;
+
+                    case 3:
+
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        clearLoginCache();
+                        break;
+                }
+            }
+        } while (true);
+
     }
 
     // ##################### CLEAR CACHE ######################
@@ -153,6 +199,7 @@ public class dataLogin {
             System.out.println("##### ID [" + i + "]");
             System.out.println("Name : " + uNameStaff.elementAt(i));
             System.out.println("Pass : " + passStaff.elementAt(i));
+            System.out.println("realName : " + displayTrueNameStaff.elementAt(i));
             System.out.println("");
         }
         cetak.cetakSpasi(2);

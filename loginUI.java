@@ -27,12 +27,6 @@ public class loginUI {
             cetak.cetakSpasi(2);
             dataLogin.rolesBasedMenu();
 
-            switch (main.input) {
-                case 5:
-                    System.out.println("CLEARING");
-                    dataLogin.clearLoginCache();
-                    break;
-            }
         } while (true);
     }
 }

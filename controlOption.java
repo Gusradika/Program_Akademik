@@ -38,7 +38,10 @@ public class controlOption {
         if (main.input == 0) {
             loginUI.loginAsStaff();
         } else {
-            System.out.println("Inputan Salah...");
+            if (main.input != 0) {
+                cetak.cetakSpasi(1);
+                System.out.println(cetak.ANSI_RED + "Inputan Salah..." + cetak.ANSI_RESET);
+            }
             menuNews();
         }
     }
