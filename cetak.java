@@ -3,8 +3,17 @@ import java.util.*;
 public class cetak {
 	public static Scanner sc = new Scanner(System.in);
 	public static Random rand = new Random();
-	public static int rangeRand = 11;
+	public static int rangeRand = 11, rangeNilai = 100;
 	public static String news = "Akan ada Donor darah yang dilakukan pada tanggal 15 September!";
+
+	public static void cacheNilaiMhs() {
+		for (int i = 1; i < dataLogin.uNameStudent.size(); i++) {
+			for (int j = 0; j < 8; j++) {
+				int random = rand.nextInt(rangeNilai);
+				dataLogin.nilaiMhs[i][j] = random;
+			}
+		}
+	}
 
 	// METHOD CETAK SPASI PARAMETER INT
 	public static void cetakSpasi(int cetakSpasi) {

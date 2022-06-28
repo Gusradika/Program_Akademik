@@ -20,6 +20,10 @@ public class dataLogin {
     public static String rolesName = "", realName = "";
     // ####### USER CONTROL
 
+    public static int[][] nilaiMhs = new int[14][8];
+    // 14 Baris, 8 Kolom, Baris ke 1 mewakili ID 0. MTK,MTK, IPA, IPA, IPS, IPS,
+    // ENG, ENG
+
     public static String[] arrayRolesName = { "ADMINISTRATOR", "DOSEN MTK", "DOSEN IPA", "DOSEN IPS", "DOSEN ENG" };
 
     private static String[] iUserStaff = { "1", "Herlambang33", "NadimItsOkay20", "Ramatama09",
@@ -54,6 +58,7 @@ public class dataLogin {
     // LINK KE CASE WHEN LOGIN UI BY USER
     public static void cetakStudent() throws LoginException, IOException {
         cetak.cetakSpasi(2);
+
         System.out.println(cetak.ANSI_YELLOW_BG + "#### [2] DETAIL PELAJAR ####" + cetak.ANSI_RESET);
         String menu[] = { "ID\t\t", "Nama\t\t\t", "Pembimbing\t\t\t", "MTK\t", "IPA\t", "IPS\t",
                 "ENG\t\t"
@@ -65,9 +70,17 @@ public class dataLogin {
             System.out.print(menu[i]);
         }
         for (int i = 0; i < uNameStudent.size(); i++) {
-            System.out.println((i + 1) + "\t\t" + displayTrueNameStudent.elementAt(i) + "\t\t"
+            System.out.print((i + 1) + "\t\t" + displayTrueNameStudent.elementAt(i) + "\t\t"
                     + cetak.ANSI_CYAN
-                    + displayTrueNameStaff.elementAt(displayStudentToDosen.elementAt(i)) + cetak.ANSI_RESET);
+                    + displayTrueNameStaff.elementAt(displayStudentToDosen.elementAt(i)) + cetak.ANSI_RESET + "\t");
+            for (int j = 0; j < 4; j++) {
+                if (j == 0) {
+                    System.out.print(((nilaiMhs[i][j] + nilaiMhs[i][(j + 1)]) / 2) + "\t");
+                } else {
+                    System.out.print(((nilaiMhs[i][j + 1] + nilaiMhs[i][(j + 1)]) / 2) + "\t");
+                }
+            }
+            System.out.println();
         }
         cetak.cetakSpasi(2);
         /*
@@ -80,6 +93,7 @@ public class dataLogin {
     public static void userCache() {
         addUserStaff();
         addUserStudent();
+        cetak.cacheNilaiMhs();
     }
 
     public static void addUserStaff() {
@@ -88,6 +102,7 @@ public class dataLogin {
             passStaff.add(iPassStaff[i]);
             displayTrueNameStaff.add(trueNameStaff[i]); // ACTUAL NAME STAFF
         }
+
     }
 
     public static void addUserStudent() {
