@@ -37,18 +37,18 @@
   - [v] Membuat Class Baru ControlOption
   - [v] Membuat Menu News Bisa di input terserah //
       - [v] Membuat ADMIN dapat memperbarui NEWS
-      - [ ] Restrict DOSEN untuk memperbarui NEWS
+      - [v] Restrict DOSEN untuk memperbarui NEWS
   - [v] Membuat aktual Name untuk Student Total 14 Student
   - [v] Membuat Login UI lebih interaktif // NOTE Untuk inbox bisa gunakan VECTOR. jika inputan 
                                               0 maka Menghapus array terakhir dan menyimpan semua array itu. 
                                               [2D] atau bisa juga menjadikannya satu dimensi dimana jika kita enter
                                                maka dia akan menambahkan \n sampai kita ketik 0 baru dia akan stop menyetor
                                                apa yang kita tulis. dan disetor kedalam ARRAY 1D.
-  - [ ] Buat menu menambahkan dan mengedit mahasiswa untuk ADMINISTRATOR
-  - [ ] Buat Matriks untuk menampilkan Mahasiswa gunakan page tiap 10... Next (berarti menampilkan 10 berikutnya. Prev sebaliknya)
-  - [ ] Buat rancangan Detail Pelajar melalui EXCEL agar mudah (gunakan catatan / excel)
-  - [ ] Buat Detail Murid bimbingan
-  - [ ] Buat LOGIN MENU UNTUK STUDENT
+  - [x](PENDING) Buat menu menambahkan dan mengedit mahasiswa untuk ADMINISTRATOR 
+  - [v] Buat Matriks untuk menampilkan Mahasiswa 
+  - [v] Buat rancangan Detail Pelajar melalui EXCEL agar mudah (gunakan catatan / excel)
+  - [v] Buat Detail Murid bimbingan
+  - [x](PENDING) Buat LOGIN MENU UNTUK STUDENT
 
     ON-GOING
       - BUAT ROLE dan DATA LOGIN menggunakan Login_Alias

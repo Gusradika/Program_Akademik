@@ -75,18 +75,113 @@ public class dataLogin {
                     + displayTrueNameStaff.elementAt(displayStudentToDosen.elementAt(i)) + cetak.ANSI_RESET + "\t");
             for (int j = 0; j < 4; j++) {
                 if (j == 0) {
-                    System.out.print(((nilaiMhs[i][j] + nilaiMhs[i][(j + 1)]) / 2) + "\t");
-                } else {
-                    System.out.print(((nilaiMhs[i][j + 1] + nilaiMhs[i][(j + 1)]) / 2) + "\t");
+                    System.out.print(((nilaiMhs[i][0] + nilaiMhs[i][1]) / 2) + "\t");
+                } else if (j == 1) {
+                    System.out.print(((nilaiMhs[i][2] + nilaiMhs[i][3]) / 2) + "\t");
+                } else if (j == 2) {
+                    System.out.print(((nilaiMhs[i][4] + nilaiMhs[i][5]) / 2) + "\t");
+                } else if (j == 3) {
+                    System.out.print(((nilaiMhs[i][6] + nilaiMhs[i][7]) / 2) + "\t");
                 }
             }
             System.out.println();
         }
+        do {
+            System.out.print(cetak.ANSI_YELLOW_BG + "FITUR COMING SOON " + cetak.ANSI_RESET
+                    + "Masukan ID Mahasiswa [0 = Back] >");
+            main.input = main.sc.nextInt();
+        } while (main.input != 0);
+        loginUI.loginAsStaff();
+    }
+
+    public static void cetakStudent2() throws LoginException, IOException {
         cetak.cetakSpasi(2);
-        /*
-         * ================================================================
-         * SAMPAI DISINI...
-         */
+        String menu1[] = { "MTK 1\t", "MTK2\t", "IPA 1\t", "IPA 2\t", "IPS 1\t", "IPA 2\t", "ENG 1\t", "ENG 2\t" };
+        int a = 0, b = 1;
+        switch (rolesID) {
+            case 2:
+                a = 0;
+                b = 1;
+                break;
+
+            case 3:
+                a = 2;
+                b = 3;
+                break;
+
+            case 4:
+                a = 4;
+                b = 5;
+                break;
+
+            case 5:
+                a = 6;
+                b = 7;
+                break;
+        }
+
+        System.out.println(cetak.ANSI_YELLOW_BG + "#### [2] DETAIL PELAJAR ####" + cetak.ANSI_RESET);
+
+        cetak.cetakSpasi(1);
+        System.out.println(
+                "=======================================================================================================");
+        System.out.println("ID\t\tNama\t\t\tPembimbing\t\t\t" + menu1[a] + menu1[b]);
+        System.out.println(
+                "=======================================================================================================");
+        for (int i = 0; i < uNameStudent.size(); i++) {
+            System.out.print((i + 1) + "\t\t" + displayTrueNameStudent.elementAt(i) + "\t\t"
+                    + cetak.ANSI_CYAN
+                    + displayTrueNameStaff.elementAt(displayStudentToDosen.elementAt(i)) + cetak.ANSI_RESET + "\t"
+                    + nilaiMhs[i][a] + "\t" + nilaiMhs[i][b]);
+            System.out.println();
+        }
+        do {
+            System.out.print(cetak.ANSI_YELLOW_BG + "FITUR COMING SOON " + cetak.ANSI_RESET
+                    + "Masukan ID Mahasiswa [0 = Back] >");
+            main.input = main.sc.nextInt();
+        } while (main.input != 0);
+        loginUI.loginAsStaff();
+    }
+
+    public static void cetakStudent3() throws LoginException, IOException {
+        cetak.cetakSpasi(2);
+
+        System.out.println(cetak.ANSI_YELLOW_BG + "#### [2] DETAIL PELAJAR ####" + cetak.ANSI_RESET);
+        String menu[] = { "ID\t\t", "Nama\t\t\t", "Pembimbing\t\t\t", "MTK\t", "IPA\t", "IPS\t",
+                "ENG\t\t"
+                        + "\n=======================================================================================================\n\n" };
+        cetak.cetakSpasi(1);
+        System.out.println(
+                "=======================================================================================================");
+        for (int i = 0; i < menu.length; i++) {
+            System.out.print(menu[i]);
+        }
+        for (int i = 0; i < uNameStudent.size(); i++) {
+            if (displayStudentToDosen.elementAt(i) == (rolesID - 1)) {
+                System.out.print((i + 1) + "\t\t" + displayTrueNameStudent.elementAt(i) + "\t\t"
+                        + cetak.ANSI_CYAN
+                        + displayTrueNameStaff.elementAt(displayStudentToDosen.elementAt(i)) + cetak.ANSI_RESET + "\t");
+                for (int j = 0; j < 4; j++) {
+
+                    if (j == 0) {
+                        System.out.print(((nilaiMhs[i][0] + nilaiMhs[i][1]) / 2) + "\t");
+                    } else if (j == 1) {
+                        System.out.print(((nilaiMhs[i][2] + nilaiMhs[i][3]) / 2) + "\t");
+                    } else if (j == 2) {
+                        System.out.print(((nilaiMhs[i][4] + nilaiMhs[i][5]) / 2) + "\t");
+                    } else if (j == 3) {
+                        System.out.print(((nilaiMhs[i][6] + nilaiMhs[i][7]) / 2) + "\t");
+                    }
+                }
+                System.out.println();
+            }
+
+        }
+        do {
+            System.out.print(cetak.ANSI_YELLOW_BG + "FITUR COMING SOON " + cetak.ANSI_RESET
+                    + "Masukan ID Mahasiswa [0 = Back] >");
+            main.input = main.sc.nextInt();
+        } while (main.input != 0);
         loginUI.loginAsStaff();
     }
 
@@ -159,7 +254,7 @@ public class dataLogin {
                 System.out.println("[1]" + " - Update News " + cetak.accessOk()); // Y
                 System.out.println("[2]" + " - Detail Pelajar " + cetak.accessOk()); // Y
                 System.out.println("[3]" + " - Menu Quiz " + cetak.accessNo()); // N
-                System.out.println("[4]" + " - Detail Pelajar Bimbingan " + cetak.accessOk()); // Y
+                System.out.println("[4]" + " - Detail Pelajar Bimbingan " + cetak.accessNo()); // N
                 System.out.print("[5]" + " - Log Out" + cetak.accessNeutral());
                 System.out.print("\nMasukan inputan >");
                 main.input = main.sc.nextInt();
@@ -173,9 +268,14 @@ public class dataLogin {
                         break;
 
                     case 3:
-
+                        cetak.cetakSpasi(2);
+                        System.out.println(cetak.ANSI_RED_BG + "NO ACCESS!" + cetak.ANSI_RESET);
+                        loginUI.loginAsStaff();
                         break;
                     case 4:
+                        cetak.cetakSpasi(2);
+                        System.out.println(cetak.ANSI_RED_BG + "NO ACCESS!" + cetak.ANSI_RESET);
+                        loginUI.loginAsStaff();
                         break;
                     case 5:
                         clearLoginCache();
@@ -187,7 +287,7 @@ public class dataLogin {
                 System.out.println("[2]" + " - UpdateDetail Pelajar " + cetak.ANSI_GREEN + rolesName
                         + cetak.ANSI_RESET + " " + cetak.accessOk());
                 System.out.println("[3]" + " - Create a Test " + cetak.accessOk()); // Y (based on roles)
-                System.out.println("[4]" + " - Detail Pelajar Bimbingan " + cetak.accessNo()); // N
+                System.out.println("[4]" + " - Detail Pelajar Bimbingan Anda " + cetak.accessOk()); // Y
                 System.out.println("[5]" + " - Log Out " + cetak.accessNeutral()); // NOT : kesimpulan bikin kondisi
                                                                                    // baru
                                                                                    // untuk mengecek dia bisa
@@ -202,13 +302,14 @@ public class dataLogin {
                         break;
 
                     case 2:
-
+                        cetakStudent2();
                         break;
 
                     case 3:
 
                         break;
                     case 4:
+                        cetakStudent3();
                         break;
                     case 5:
                         clearLoginCache();
