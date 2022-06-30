@@ -50,6 +50,10 @@
   - [v] Buat Detail Murid bimbingan
   - [x](PENDING) Buat LOGIN MENU UNTUK STUDENT
 
+
+  Stable 0.5.0
+  - [] Buat Menu untuk Create test
+  - [] 
     ON-GOING
       - BUAT ROLE dan DATA LOGIN menggunakan Login_Alias
       - Bikin Soal A,B,C,D
