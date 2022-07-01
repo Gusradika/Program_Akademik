@@ -65,6 +65,11 @@
       - [] Untuk TEST MATEMATIKA buat COOMING soon dikarenakan ada fitur2 dimana bisa auto generate Soal
   - [v] Memperbaiki beberapa BUG saat memilih menu
 
+  ################################# PENTING! #################################################
+  NOTE : SAYA TELAH MEMBUAT OWSS TOLONG CEK KODENYA DAN IMPLEMENTASIKAN KE SINI AGAR DAPAT MENAMBAHKAN 
+  FITUR MESSAGE JANGAN LUPA MESSAGE DISETOR KE VECTOR. LALU BUAT SISTEM DIMANA HANYA MHS YG MENERIMA PESAN 
+  SAJA YANG BISA MELIHAT
+  ############################################################################################
     ON-GOING
       - BUAT ROLE dan DATA LOGIN menggunakan Login_Alias
       - Bikin Soal A,B,C,D
