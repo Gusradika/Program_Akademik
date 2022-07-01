@@ -53,7 +53,7 @@
 
   Stable 0.5.0
   - [] Buat Menu untuk Create test
-  - [] 
+  - [] Buat Login Menu untuk 
     ON-GOING
       - BUAT ROLE dan DATA LOGIN menggunakan Login_Alias
       - Bikin Soal A,B,C,D

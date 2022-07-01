@@ -146,7 +146,7 @@ public class dataLogin {
     public static void cetakStudent3() throws LoginException, IOException {
         cetak.cetakSpasi(2);
 
-        System.out.println(cetak.ANSI_YELLOW_BG + "#### [2] DETAIL PELAJAR ####" + cetak.ANSI_RESET);
+        System.out.println(cetak.ANSI_YELLOW_BG + "#### [4] DETAIL PELAJAR BIMBINGAN ANDA ####" + cetak.ANSI_RESET);
         String menu[] = { "ID\t\t", "Nama\t\t\t", "Pembimbing\t\t\t", "MTK\t", "IPA\t", "IPS\t",
                 "ENG\t\t"
                         + "\n=======================================================================================================\n\n" };
@@ -183,6 +183,39 @@ public class dataLogin {
             main.input = main.sc.nextInt();
         } while (main.input != 0);
         loginUI.loginAsStaff();
+    }
+
+    public static void tabelAkademis() throws LoginException, IOException {
+        cetak.cetakSpasi(2);
+
+        int a = dataLogin.loginAlias;
+        System.out.println(cetak.ANSI_YELLOW_BG + "#### [1] TABEL AKADEMIS ####" + cetak.ANSI_RESET);
+        cetak.cetakSpasi(1);
+        System.out.println("====================================================");
+        String[] menu = { "  \t", "QUIZ 1\t", "QUIZ 2\t", "RERATA\n" };
+        String[] menu2 = { "MTK\t", "IPA\t", "IPS\t", "ENG\t" };
+        for (int i = 0; i < menu.length; i++) {
+            System.out.print(menu[i]);
+        }
+        System.out.println("====================================================");
+        for (int i = 0; i < menu2.length; i++) {
+            System.out.print(menu2[i]);
+            if (i == 0) {
+                System.out.print(
+                        nilaiMhs[a][0] + "\t" + nilaiMhs[a][1] + "\t" + (nilaiMhs[a][0] + nilaiMhs[a][1]) / 2 + "\n");
+            } else if (i == 1) {
+                System.out.print(
+                        nilaiMhs[a][2] + "\t" + nilaiMhs[a][3] + "\t" + (nilaiMhs[a][2] + nilaiMhs[a][3]) / 2 + "\n");
+            } else if (i == 2) {
+                System.out.print(
+                        nilaiMhs[a][4] + "\t" + nilaiMhs[a][5] + "\t" + (nilaiMhs[a][4] + nilaiMhs[a][5]) / 2 + "\n");
+            } else if (i == 3) {
+                System.out.print(
+                        nilaiMhs[a][6] + "\t" + nilaiMhs[a][7] + "\t" + (nilaiMhs[a][6] + nilaiMhs[a][7]) / 2 + "\n");
+            }
+        }
+        System.out.println("====================================================");
+        loginUI.loginAsStudent();
     }
 
     public static void userCache() {
@@ -246,6 +279,11 @@ public class dataLogin {
         }
     }
 
+    public static void loginRolesStudent() throws LoginException, IOException {
+        realName = displayTrueNameStudent.elementAt(loginAlias);
+        loginUI.loginAsStudent();
+    }
+
     public static void rolesBasedMenu() throws IOException, LoginException { // CONNECTED WITH CLASS LOGINUI.java dan
                                                                              // CLASS
         // controlOption
@@ -284,7 +322,7 @@ public class dataLogin {
             }
             if (rolesID == 2 || rolesID == 3 || rolesID == 4 || rolesID == 5) { // NOT ADMIN
                 System.out.println("[1]" + " - Update News " + cetak.accessNo()); // N
-                System.out.println("[2]" + " - UpdateDetail Pelajar " + cetak.ANSI_GREEN + rolesName
+                System.out.println("[2]" + " - Detail Pelajar " + cetak.ANSI_GREEN + rolesName
                         + cetak.ANSI_RESET + " " + cetak.accessOk());
                 System.out.println("[3]" + " - Create a Test " + cetak.accessOk()); // Y (based on roles)
                 System.out.println("[4]" + " - Detail Pelajar Bimbingan Anda " + cetak.accessOk()); // Y
@@ -306,7 +344,8 @@ public class dataLogin {
                         break;
 
                     case 3:
-
+                        System.out.println(cetak.ANSI_YELLOW_BG + "Feature Coming Soon" + cetak.ANSI_RESET);
+                        loginUI.loginAsStaff();
                         break;
                     case 4:
                         cetakStudent3();
@@ -316,8 +355,44 @@ public class dataLogin {
                         break;
                 }
             }
+            if (main.input >= 6 || main.input < 0) {
+                System.out.println(cetak.ANSI_RED_BG + "INPUTAN SALAH!" + cetak.ANSI_RESET);
+                loginUI.loginAsStaff();
+            }
         } while (true);
 
+    }
+
+    public static void studentMenu() throws LoginException, IOException {
+        do {
+            System.out.println("[1]" + " - Tabel Akademis " + cetak.accessOk()); // Y
+            System.out.println("[2]" + " - Message BOX  " + cetak.accessSoon()); // Y
+            System.out.println("[3]" + " - Cek Tugas " + cetak.accessOk()); // Y
+            System.out.print("[4]" + " - Log Out" + cetak.accessNeutral());
+            System.out.print("\nMasukan inputan >");
+            main.input = main.sc.nextInt();
+            switch (main.input) {
+                case 1:
+                    tabelAkademis();
+                    break;
+
+                case 2:
+                    System.out.println(cetak.ANSI_YELLOW_BG + "Feature Coming Soon" + cetak.ANSI_RESET);
+                    loginUI.loginAsStudent();
+                    break;
+
+                case 3:
+                    break;
+
+                case 4:
+                    clearLoginCache();
+                    break;
+            }
+            if (main.input >= 5 || main.input < 0) {
+                System.out.println(cetak.ANSI_RED_BG + "INPUTAN SALAH!" + cetak.ANSI_RESET);
+                loginUI.loginAsStudent();
+            }
+        } while (true);
     }
 
     // ##################### CLEAR CACHE ######################

@@ -126,7 +126,7 @@ public class checkID {
         } while (!dataLogin.studentAccess);
         dataLogin.studentAccess = false;
         System.out.println("############## LOGIN BERHASIL student");
-        landingPage();
+        dataLogin.loginRolesStudent();
 
     }
 }
