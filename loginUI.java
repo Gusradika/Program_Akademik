@@ -47,9 +47,9 @@ public class loginUI {
             cetak.news();
             System.out.println("***************************************************************");
             System.out.print(cetak.ANSI_CYAN + "Welcome Back! : " + cetak.ANSI_RESET
-                    + dataLogin.realName + "\tDosen Pembimbing " + cetak.ANSI_YELLOW + dataLogin.displayTrueNameStaff
-                            .elementAt(dataLogin.displayStudentToDosen.elementAt(dataLogin.loginAlias))
-                    + cetak.ANSI_RESET);
+                    + dataLogin.realName + "||" + cetak.ANSI_CYAN + "\t Dosen Pembimbing " + cetak.ANSI_RESET
+                    + dataLogin.displayTrueNameStaff
+                            .elementAt(dataLogin.displayStudentToDosen.elementAt(dataLogin.loginAlias)));
             cetak.cetakSpasi(2);
             dataLogin.studentMenu();
 

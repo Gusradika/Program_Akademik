@@ -52,8 +52,19 @@
 
 
   Stable 0.5.0
+  - [v] Tabel Akademik untuk Student
+  - [v] Buat LOGIN MENU UNTUK STUDENT
   - [] Buat Menu untuk Create test
-  - [] Buat Login Menu untuk 
+      - [] Tentukan limiter QTY soal 1 - 5
+      - [] Buat Testing dahulu apakah bisa menyediakan soal A, B? menggunakan implementasi IDE (jika tidak menulis 0 tidak akan stop, jika enter brrti akan di konvert ke \n)
+      - [] terdiri dari 3 Bagian : 1.Bagian atas adalah narasi, 
+                                   2.Bagian tengah adalah A
+                                   3.Bagian bawah adalah B
+                                   4.lalu pilih jawaban mana yang benar
+      - [] cari struktur data yang cocok untuk menyetor semua test ini
+      - [] Untuk TEST MATEMATIKA buat COOMING soon dikarenakan ada fitur2 dimana bisa auto generate Soal
+  - [v] Memperbaiki beberapa BUG saat memilih menu
+
     ON-GOING
       - BUAT ROLE dan DATA LOGIN menggunakan Login_Alias
       - Bikin Soal A,B,C,D
