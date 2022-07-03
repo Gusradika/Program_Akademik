@@ -96,7 +96,7 @@ public class dataLogin {
 
     public static void cetakStudent2() throws LoginException, IOException {
         cetak.cetakSpasi(2);
-        String menu1[] = { "MTK 1\t", "MTK2\t", "IPA 1\t", "IPA 2\t", "IPS 1\t", "IPA 2\t", "ENG 1\t", "ENG 2\t" };
+        String menu1[] = { "MTK 1\t", "MTK2\t", "IPA 1\t", "IPA 2\t", "IPS 1\t", "IPS 2\t", "ENG 1\t", "ENG 2\t" };
         int a = 0, b = 1;
         switch (rolesID) {
             case 2:
@@ -344,8 +344,7 @@ public class dataLogin {
                         break;
 
                     case 3:
-                        System.out.println(cetak.ANSI_YELLOW_BG + "Feature Coming Soon" + cetak.ANSI_RESET);
-                        loginUI.loginAsStaff();
+                        test.cekTestStaff();
                         break;
                     case 4:
                         cetakStudent3();
@@ -382,6 +381,7 @@ public class dataLogin {
                     break;
 
                 case 3:
+                    test.cekTestStudent();
                     break;
 
                 case 4:
